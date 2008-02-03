@@ -1,0 +1,107 @@
+/*
+ * CSS Stylesheet for French Perl Workshop 2006
+ * --------------------------------------------
+ * 
+ */
+
+/* Global layout ============================== */
+body {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20%;
+}
+
+#menu {
+    width: 15%;
+    position: absolute;
+    top: 100px;  left: 2%;
+}
+
+/* Default fonts ============================== */
+body, input, textarea {
+    background-color: white;
+    color: black;
+    font-family: "Verdana", sans-serif;
+}
+
+/* Generic styles ============================= */
+.hidden { display: none; }
+.nowrap { white-space: nowrap; }
+.center { margin-left: auto; margin-right: auto; }
+
+/* Styles for links =========================== */
+a {
+  text-decoration: none;
+}
+
+a img {
+  border: none;
+}
+
+a[href]:hover, a[href]:focus {
+  text-decoration: underline;
+}
+
+/* Images styles ============================== */
+.thumbnail {
+  float: right;
+  margin: 10px;
+}
+
+/* Styles for boxes =========================== */
+.abstract {
+  font-size: 110%;
+  font-weight: bold;
+}
+
+#copyright {
+  font-style: italic;
+  font-size: 80%;
+  color: #999;
+  clear: both;
+}
+
+/* Menu layout ================================ */
+#menu {
+    padding: 5px;
+    border: solid #999 1px;
+    border-top-color: #ccc;
+    border-left-color: #ccc;
+    background-color: #ffffff;
+    -moz-border-radius: 10px;
+    font-size: 80%;
+/*    font-weight: bold; */
+}
+
+#menu a {
+    display: block;
+}
+
+
+#frame1 {
+    position: absolute;
+    top: 3%; left: 4%;
+    width: 20%;  height: 70%;
+    border-top: solid 1px #ddd;
+    border-left: solid 1px #ddd;
+}
+
+#box1, #box2 {
+    position: absolute;
+    background-color: #f7f7ff;
+}
+
+#box1 {
+    top: 60%;  left: 30%;
+    width: 30%;  height: 20%;
+}
+
+/* Styles for printing ======================== */
+@media print {
+  h1, h2, h3, h4, h5, h6 { page-break-after: avoid }
+  body  { width: 90%; padding: 2%; font-family: "Times New Roman", serif; }
+  p     { text-align: justify; }
+  #menu { display: none; }
+}
+
