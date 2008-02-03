@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Traditional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-traditional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="[% global.request.language %]" xml:lang="[% global.request.language %]">
 
 <head>
@@ -11,16 +11,20 @@
 [%- IF title -%]<title>[% title  %]</title>[%- END -%]
 
 <!-- CSS Stylesheets -->
+<link rel="stylesheet" href="/ya2008/css/style.css" type="text/css" />
 
 <!-- Favorite icon -->
 <link rel="shortcut icon" type="image/png" href="/favicon.png" />
 </head>
 
 <body>
-[% PROCESS menu %]
-[%- IF title -%]<h1>[% title  %]</h1>[%- END -%]
+<div id="menu">[% PROCESS menu %]</div>
+<div id="main">
+[%- IF title -%]<h1 class="title">[% title  %]</h1>[%- END -%]
 
+<div id="content">
 [% content %]
+</div>
 
 </body>
 </html>
