@@ -41,8 +41,8 @@
 [% FOREACH item = news %]
 <div class="news-entry">
  <h3 class="news-header">
-  <span class="news-date">[% date_format(item.datetime, 'date_short') %]</span>
   <span class="news-title">[% item.title %]</span>
+  <span class="news-date">([% date_format(item.datetime, "date_full") %])</span>
  </h3>
  <div class="news-text">
   [% item.content %]
