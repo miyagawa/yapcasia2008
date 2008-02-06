@@ -3,7 +3,7 @@ Previous YAPC::Asia
 [% END %]
 
 <ul>
-<li><a href="http://tokyo2007.yacpasia.org/">YAPC::Asia 2007</a></li>
-<li><a href="http://tokyo.yacpasia.org/">YAPC::Asia 2006</a></li>
+[% WRAPPER menus/item %]<a href="http://tokyo2007.yacpasia.org/">YAPC::Asia 2007</a>[% END %]
+[% WRAPPER menus/item %]<a href="http://tokyo.yacpasia.org/">YAPC::Asia 2006</a>[% END %]
 </ul>
 
