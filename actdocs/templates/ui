@@ -7,8 +7,8 @@
 <meta http-equiv="Content-Language" content="[% global.request.language %]" />
 <!-- Atom news feed -->
 <link rel="alternate" type="application/atom+xml" title="[% global.conference.name %]"
-      href="[% global.request.base_url %][% make_uri_info( 'atom', global.request.language ) %].xml" />
-[%- IF title -%]<title>[% title  %]</title>[%- END -%]
+      href="http://feeds.feedburner.com/YapcAsia" />
+<title>[%- IF title -%][% title | html %]:[%- END -%] YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN</title>
 
 <!-- CSS Stylesheets -->
 <link rel="stylesheet" href="/ya2008/css/style.css" type="text/css" />
@@ -18,12 +18,20 @@
 </head>
 
 <body>
-<div id="menu">[% PROCESS menu %]</div>
-<div id="main">
-[%- IF title -%]<h1 class="title">[% title  %]</h1>[%- END -%]
+<div id="wrapper">
 
+  <div id="header">
+    <h1>YAPC::Asia 2008 May 15-16th</h1>
+  </div>
+
+<div id="menu">[% PROCESS menu %]</div>
 <div id="content">
 [% content %]
+</div>
+
+  <div id="footer">
+    Shibuya Perl Mongers - Powered by <a href="http://act.mongueurs.net/">Act</a>
+  </div>
 </div>
 
 </body>

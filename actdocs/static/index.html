@@ -1,9 +1,60 @@
-[% WRAPPER ui title = "YAPC::Asia 2008" %]
+[% WRAPPER ui title = "Welcome" %]
+
+<h1>
+<t>
+ <en>YAPC::Asia 2008</en>
+</t>
+</h1>
 
 <p>
 <t>
- <en>Welcome to the YAPC::Asia 2008 TEST web site</en>
+<en>YAPC::Asia 2008 will happen May 15-16, 2008 in Tokyo, JAPAN.</en>
 </t>
 </p>
+
+<p>
+<t>
+<en>The venue will be <a href="[% make_uri('location.html') %]">Tokyo Institute of Technology</a>: very accessible from central Tokyo within 30 minutes.</en>
+</t>
+</p>
+
+<p>
+<t>
+<en>For the latest updates and communication, we have <a href="http://feeds.feedburner.com/YapcAsia">news feed</a>, <a href="http://twitter.com/yapcasia">Twitter stream</a> and <a href="http://www.facebook.com/event.php?eid=21043164424">Facebook event page</a>. You don't need to double register on this site and Facebook, but it'll help people know each other more!</en>
+</t>
+</p>
+
+<p>
+<t>
+<en><a href="http://www.yapc.org/">&quot;YAPC&quot;</a> stands for &quot;Yet Another Perl Conference&quot; and is a series of low-cost, grassroot conferences organized by local Perl user groups. YAPC::Asia 2008 is the 3rd YAPC in Tokyo. Check out our site <a href="http://tokyo.yapcasia.org/">2006</a> and <a href="http://tokyo2007.yapcasia.org/">2007</a> for what happend in previous years.</en>
+</t>
+</p>
+
+[% news = global.news(3);
+   IF news.size > 2;
+     more = news.pop;
+   END;
+ %]
+
+[% IF news.size %]
+<h2>Latest News</h2>
+[% FOREACH item = news %]
+<div class="news-entry">
+ <h3 class="news-header">
+  <span class="news-date">[% date_format(item.datetime, 'date_short') %]</span>
+  <span class="news-title">[% item.title %]</span>
+ </h3>
+ <div class="news-text">
+  [% item.content %]
+ </div>
+</div>
+[% END %]
+[% END %]
+
+[% IF more %]
+<p>
+ <a href="[% make_uri('news') %]" class="news-link">Older announcements</a>
+</p>
+[% END %]
 
 [% END %]
