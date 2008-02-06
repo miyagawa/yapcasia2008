@@ -2,7 +2,7 @@
 Previous Years
 [% END %]
 
-[% WRAPPER menus/item %]<a href="http://tokyo2007.yacpasia.org/">YAPC::Asia 2007</a>[% END %]
-[% WRAPPER menus/item %]<a href="http://tokyo.yacpasia.org/">YAPC::Asia 2006</a>[% END %]
+[% WRAPPER menus/item %]<a href="http://tokyo2007.yapcasia.org/">YAPC::Asia 2007</a>[% END %]
+[% WRAPPER menus/item %]<a href="http://tokyo.yapcasia.org/">YAPC::Asia 2006</a>[% END %]
 
 
