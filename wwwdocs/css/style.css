@@ -1,107 +1,38 @@
-/*
- * CSS Stylesheet for French Perl Workshop 2006
- * --------------------------------------------
- * 
- */
-
-/* Global layout ============================== */
 body {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20%;
+	background-color: white;
+	color: black;
+	font-family: sans-serif;
+	margin: 0pt auto;
+}
+
+#wrapper {
+	margin: 0pt auto;
+	width: 850px;
 }
 
 #menu {
-    width: 15%;
-    position: absolute;
-    top: 100px;  left: 2%;
+	float: left;
+	font-size: 90%;
+	width: 150px;
 }
 
-/* Default fonts ============================== */
-body, input, textarea {
-    background-color: white;
-    color: black;
-    font-family: "Verdana", sans-serif;
+#menu h2 {
+	font-size: 110%;
 }
 
-/* Generic styles ============================= */
-.hidden { display: none; }
-.nowrap { white-space: nowrap; }
-.center { margin-left: auto; margin-right: auto; }
-
-/* Styles for links =========================== */
-a {
-  text-decoration: none;
+#menu ul {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
 }
 
-a img {
-  border: none;
+#content {
+	float: right;
+	width: 700px;
 }
 
-a[href]:hover, a[href]:focus {
-  text-decoration: underline;
+#footer {
+	clear: both;
+	font-size: 80%;
+	text-align: right;
 }
-
-/* Images styles ============================== */
-.thumbnail {
-  float: right;
-  margin: 10px;
-}
-
-/* Styles for boxes =========================== */
-.abstract {
-  font-size: 110%;
-  font-weight: bold;
-}
-
-#copyright {
-  font-style: italic;
-  font-size: 80%;
-  color: #999;
-  clear: both;
-}
-
-/* Menu layout ================================ */
-#menu {
-    padding: 5px;
-    border: solid #999 1px;
-    border-top-color: #ccc;
-    border-left-color: #ccc;
-    background-color: #ffffff;
-    -moz-border-radius: 10px;
-    font-size: 80%;
-/*    font-weight: bold; */
-}
-
-#menu a {
-    display: block;
-}
-
-
-#frame1 {
-    position: absolute;
-    top: 3%; left: 4%;
-    width: 20%;  height: 70%;
-    border-top: solid 1px #ddd;
-    border-left: solid 1px #ddd;
-}
-
-#box1, #box2 {
-    position: absolute;
-    background-color: #f7f7ff;
-}
-
-#box1 {
-    top: 60%;  left: 30%;
-    width: 30%;  height: 20%;
-}
-
-/* Styles for printing ======================== */
-@media print {
-  h1, h2, h3, h4, h5, h6 { page-break-after: avoid }
-  body  { width: 90%; padding: 2%; font-family: "Times New Roman", serif; }
-  p     { text-align: justify; }
-  #menu { display: none; }
-}
-
