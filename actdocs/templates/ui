@@ -6,10 +6,8 @@
 <!-- Document Metadata -->
 <meta http-equiv="Content-Language" content="[% global.request.language %]" />
 <!-- Atom news feed -->
-<t>
-<en><link rel="alternate" type="application/atom+xml" title="[% global.conference.name %]" href="http://feeds.feedburner.com/YapcAsia" /></en>
-<ja><link rel="alternate" type="application/atom+xml" title="[% global.conference.name %]" href="http://feeds.feedburner.com/YapcAsiaJa" /></ja>
-</t>
+<link rel="alternate" type="application/atom+xml" title="[% global.conference.name %]" href="http://feeds.feedburner.com/YapcAsia" />
+<link rel="alternate" type="application/atom+xml" title="[% global.conference.name %]" href="http://feeds.feedburner.com/YapcAsiaJa" />
 
 <title>[%- IF title -%][% title | html %]:[%- END -%] YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN</title>
 
