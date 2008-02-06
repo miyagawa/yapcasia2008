@@ -9,6 +9,17 @@
 <link rel="alternate" type="application/atom+xml" title="[% global.conference.name %]" href="http://feeds.feedburner.com/YapcAsia" />
 <link rel="alternate" type="application/atom+xml" title="[% global.conference.name %]" href="http://feeds.feedburner.com/YapcAsiaJa" />
 
+<!-- analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-52226-3");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
 <title>[%- IF title -%][% title | html %]:[%- END -%] YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN</title>
 
 <!-- CSS Stylesheets -->
