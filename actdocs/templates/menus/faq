@@ -1,3 +1,6 @@
 [% WRAPPER menus/section %]
-<a href="[% make_uri('wiki?node=FrequentlyAskedQuestions') %]">FAQ</a>
+<t>
+<en><a href="[% make_uri('wiki?node=FrequentlyAskedQuestions') %]">FAQ</a></en>
+<ja><a href="[% make_uri('wiki?node=FrequentlyAskedQuestionsJa') %]">FAQ</a></ja>
+</t>
 [% END %]
