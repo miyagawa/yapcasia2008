@@ -1,0 +1,15 @@
+<div class="section connected">
+    <h3>Stay Connected</h3>
+    <ul>
+        <li class="feed">
+        <t>
+        <en><a rel="alternate" href="http://feeds.feedburner.com/YapcAsia">YAPC::Asia RSS Feed</a></en>
+        <ja><a rel="alternate" href="http://feeds.feedburner.com/YapcAsiaJa">YAPC::Asia RSS Feed</a></ja>
+        </t>
+        </li>
+        <li class="twitter">
+        <a href="http://twitter.com/yapcasia" class="twitter">Twitter stream</a>
+        </li>
+        <li class="tag">Tag: <kbd>yapcasia2008</kbd></li>
+    </ul>
+</div>

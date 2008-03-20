@@ -1,0 +1,119 @@
+<div class="vcard">
+  <div class="picture small avator">
+    [%- IF photo_name %]
+    <img alt="{{Name}}" src="/[% global.config.general_dir_photos %]/[% photo_name %]" class="photo" />
+    [%- ELSE %]
+    <img alt="{{Name}}" src="/ya2008/css/themes/ya2008/images/no_photo.png" width="200" height="200" />
+    [% END %]
+  </div>
+<dl>
+<!-- name -->
+<dt>{{Name}}</dt>
+<dd class="n">
+  [%- IF pseudonymous %]
+  [% nick_name %]
+  [%- ELSE %]
+  [% loc("salutation_${salutation}") IF salutation %]
+  <span class="family-name">[% first_name %]</span>
+  <span class="given-name">[% last_name %]</span>
+  [% "(&lrm;${nick_name}&lrm;)" IF nick_name %]
+  [% END %]
+</dd>
+<!-- /name -->
+<!-- country -->
+<dt>{{Country}}</dt>
+<dd class="adr">[%- IF town %]<span class="region">[% town%]</span>, [% END %]<span class="country-name">[% country %]</span></dd>
+<!-- /country -->
+[%- IF pm_group %]
+<!-- pm -->
+<dt>{{Perl mongers group}}</dt>
+<dd>[% IF pm_group_url %]<a href="[% pm_group_url %]">[% pm_group %]</a>[% ELSE %][% pm_group %][% END %]</dd>
+<!-- /pm -->
+[% END %]
+[% IF company %]
+<!-- company -->
+<dt>{{Company}}</dt>
+<dd>[% "<a href=\"$company_url\" class=\"org\">" IF company_url %][% company %][% '</a>' IF company_url %]</dd>
+<!-- /company -->
+[% END %]
+[%- IF web_page %]
+<!-- web -->
+<dt>{{Web page}}</dt>
+<dd><tt><a href="[% web_page %]" class="url">[% web_page %]</a></tt></dd>
+<!-- /web -->
+[% END %]
+[%- IF not email_hide or global.request.user.is_orga %]
+<!-- email -->
+<dt>{{Email}}</dt>
+<dd><tt><a href="mailto:[% email %]" class="email">[% email %]</a></tt></dd>
+<!-- /email -->
+[% END %]
+[%- IF im %]
+<!-- im -->
+<dt>{{IM}}</dt>
+<dd>[% im %]</dd>
+<!-- /im -->
+[% END %]
+[%- IF pause_id %]
+<!-- pause_id -->
+<dt>Pause id</dt>
+<dd><a href="http://search.cpan.org/author/[% pause_id %]/">[% pause_id %]</a></dd>
+<!-- /pause_id -->
+[% END %]
+[%- IF monk_id %]
+<!-- monk_id -->
+<dt>Perlmonks id</dt>
+<dd><a href="http://perlmonks.org/index.pl?node_id=[% monk_id %]" >[% monk_name OR monk_id %]</a></dd>
+<!-- monk_id -->
+[% END %]
+[%- IF gpg_key_id %]
+<!-- gpg_key -->
+<dd>{{GPG key ID}}</dd>
+<dt><a href="http://pgp.mit.edu:11371/pks/lookup?op=vindex&search=0x[% gpg_key_id %]">0x[% gpg_key_id %]</a></dd>
+<!-- /gpg_key -->
+[% END %]
+[%- IF bio.keys.size %]
+<!-- bio -->
+<dt>{{Bio}}</dt>
+[% FOREACH lang = bio.keys %]
+<dd>
+[% global.config.languages.$lang.name | ucfirst %]
+<p>[% bio.$lang | replace('\n', '<br />') %]</p>
+</dd>
+[% END %]
+<!-- /bio -->
+[% END %]
+</dl>
+
+[% IF talks.size %]
+<dl id="talks">
+<!-- talk -->
+<dt>[% loc('Talk', talks.size) %]
+  [% accepted = 0;
+  FOREACH t = talks; IF t.accepted; accepted = 1; LAST; END; END;
+  IF accepted %]
+  <span class="memo">({{Accepted talks are shown in bold type.}})</span>
+  [% END %]
+</dt>
+<dd>
+  <ul>
+    [% FOREACH t = talks %]
+    <li>[% talk_link(t) %] <span class="time">([% IF t.duration ; t.duration %]{{minutes}}[% ELSE %]{{Lightning talk}}[% END %])</span>[% talk_modify_link(t) %]</li>
+    [% END %]
+  </ul>
+</dd>
+</dl>
+<!-- /talk -->
+[% END %]
+
+[% IF conferences.size %]
+<dl id="other-act-conferences">
+<dt>{{Other Act conferences:}}</dt>
+<dd>
+  <ul>
+    [% FOREACH c = conferences %]<li><a href="[% c.url %]user/[% user_id %]">[% c.name %]</a>[% END %]
+  </ul>
+</dd>
+</dl>
+[% END %]
+</div>

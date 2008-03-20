@@ -1,0 +1,5 @@
+[% WRAPPER ui title = loc('Your information') %]
+
+[% PROCESS core/user/change %]
+
+[% END %]

@@ -1,4 +1,4 @@
-[% WRAPPER menus/section %]
+[% WRAPPER menus/item %]
 <t>
 <en><a href="[% make_uri('wiki') %]">Wiki</a></en>
 <ja><a href="[% make_uri('wiki?node=HomePageJa') %]">Wiki</a></ja>

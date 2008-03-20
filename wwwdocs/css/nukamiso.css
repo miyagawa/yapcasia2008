@@ -1,0 +1,243 @@
+@charset "utf-8";
+
+body {
+    line-height: 1.3;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    *font-size: small;
+    *font: x-small;
+}
+
+h1 {
+    margin: 1.2em 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h4, h5, h6 {
+    font-size: 110%;
+}
+
+p {
+    margin: 1em 0;
+    line-height: 1.6;
+}
+
+pre {
+    width: 95%;
+    max-width: 95%;
+    max-height: 500px; 
+    overflow: auto;
+    margin: 1.5em auto;
+    padding: 0.8em 0.8em;
+    font-size: 100%;
+    word-wrap:break-word;
+}
+
+blockquote {
+    clear: both;
+    margin: 2em 26px 0.5em; 
+    padding: 1px 0; 
+}
+
+del {
+    text-decoration: line-through;
+    font-weight: normal !important;
+}
+
+ins {
+    display: block;
+    margin: 1em 13px 0.5em;
+    padding: 1px 0;
+}
+
+ins div, 
+ins p, 
+ins pre,
+ins blockquote, 
+ins ul, 
+ins ol, 
+ins dl,
+ins table {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+p ins, 
+pre ins, 
+address ins, 
+li ins, 
+dt ins, 
+dd ins {
+    display: inline;
+    margin: 0 0.2em;
+    padding: 0.1em 0.3em;
+}
+
+pre ins {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: underline;
+}
+
+em {
+    margin: 0 0.1em;
+    text-decoration: underline;
+    font-style: normal;
+}
+
+strong {
+    margin: 0 0.1em;
+    font-weight: bold;
+}
+
+pre em, 
+pre strong {
+    margin: 0;
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted #aaa;
+    cursor: help;
+}
+
+code, samp, kbd, var {
+    font-family: monospace;
+    font-size: 100%;
+}
+
+var {
+    margin-right: 0.2em;
+}
+
+sub, sup {
+    font-size: 50%;
+}
+
+small {
+    font-size: 90%;
+}
+
+big {
+    font-size: 125%;
+}
+
+ul, 
+ol {
+    clear: both;
+    margin: 2em 0 2em 2.5em;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 0.75em;
+}
+
+li ul, 
+li ol {
+    margin: 0.75em 1.5em;
+}
+
+dl {
+    clear: both;
+    margin: 2em 0.5em;
+}
+
+dd {
+    margin: 0.2em 1em 2.5em;
+}
+
+/*
+dl dd * {
+    margin-right: 0;
+    margin-left: 0;
+}
+*/
+
+form {
+    margin: 1.5em 0;
+    padding: 0; 
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+legend {
+    display: none;
+}
+
+form dl {
+    margin: 0;
+    padding: 0;
+}
+
+form dt, 
+form dd {
+    margin: 0;
+}
+
+form div {
+    clear: both;
+    text-align: right;
+}
+
+input,
+label,
+select {
+    vertical-align: middle;
+    margin: 0 0.2em;
+}
+
+select, input, textarea {
+    font-family: Osaka, "MS P Gothic", Arial, sans-serif;
+    font-size: 99%;
+}
+
+table {
+    border-spacing: 0;
+    border-width: 1px 0 0 1px;
+    border-style: solid;
+    font-size: 100%;
+    margin: 0 0 2.5em;
+    width: 98%;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border-style: solid;
+}
+
+tr {
+    border: medium none;
+}
+
+th, td {
+    border-width: 0 1px 1px 0;
+    padding: 0.2em 0.5em;
+}
+
+th {
+    text-align: center;
+}
+
+caption {
+    font-weight: bold;
+    margin: 2.5em auto 0.5em;
+    text-align: center;
+    width: 90%;
+}
+
+img {
+    border: 0;
+}
+

@@ -1,0 +1,5 @@
+[% WRAPPER ui title = loc("User information") %]
+
+[% PROCESS core/user/show %]
+
+[% END %]

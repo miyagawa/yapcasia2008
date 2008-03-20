@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+body {
+  text-align: center;
+}
+
+.header, 
+.container,
+.footer-content {
+    position: relative;
+    width: 52em;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.header {
+    padding: 30px 0;
+}
+
+.site-title {
+    margin: 0;
+}
+
+#navigation {
+    position: absolute;
+    z-index: 100;
+    top: 70px;
+    right: 0;
+    margin: 0;
+}
+
+#navigation li {
+    list-style: none;
+    float: left;
+    margin: 0;
+}
+
+#utility-nav {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    height: 40px;
+    margin: 0;
+    padding-left: 25px;
+    line-height: 40px;
+    text-align: right;
+}
+
+#utility-nav li {
+    display: inline;
+    margin-left: 0.3em;
+}
+
+.section {
+    margin-bottom: 3.5em;
+}
+
+.content .section .section {
+    margin-top: 2.5em;
+}
+
+.entry {
+    clear: both;
+    margin-top: 1.5em;
+}
+
+.content {
+    margin-bottom: 30px;
+}
+
+.connected {
+    float: right;
+    width: 200px;
+    margin: 0 0 1em;
+}
+
+.vcard dl {
+    margin-top: 1em;
+    clear: none;
+    overflow: auto;
+}
+
+.vcard dl dt { 
+    float: left;
+    width: 12em;
+ }
+
+.vcard dl dd { 
+    margin: 0 0 0.8em 13em;
+}
+
+.vcard dl#other-act-conferences,
+.vcard dl#talks { 
+    clear: both;
+}
+
+.vcard dl#other-act-conferences dt,
+.vcard dl#talks dt { 
+    float: none;
+    width: auto;
+}
+
+.vcard dl#other-act-conferences dd, 
+.vcard dl#talks dd { 
+    margin: 0.2em 1em 2em;
+}
+
+form dl dt {
+    float: left;
+    width: 15em;
+    margin-top: 0.2em;
+    text-align: right;
+}
+
+form#avatar-form dl dt { 
+    width: auto;
+}
+
+form dl dd {
+    margin: 0 0 0.8em 16em;
+}
+
+form#avatar-form dl dd { 
+    margin-left: 0;
+}
+
+form dl dd textarea {
+    width: 98%;
+    padding: 0.3em;
+    border: 0;
+}
+
+form div {
+    clear: both;
+    position: relative;
+    margin-left: 6em;
+    text-align: right;
+}
+
+/* form div span {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+*/
+
+#sponsors ul { 
+    margin: 1em 0;
+}
+
+#sponsors ul li { 
+    list-style-type: none;
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.footer-content .section {
+    float: right;
+    width: 20%;
+    margin: 50px 0 20px 15px;
+}

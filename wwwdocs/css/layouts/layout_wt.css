@@ -1,0 +1,24 @@
+.header, 
+.container,
+.footer-content {
+    width: 900px;
+}
+
+.content {
+    float: left;
+    width: 680px;
+}
+
+#sponsors {
+    float: right;
+    clear: right;
+    width: 200px;
+}
+
+.footer {
+    clear: both;
+}
+
+address {
+    clear: both;
+}

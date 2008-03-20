@@ -1,4 +1,21 @@
-[% WRAPPER ui title = "" %]
+[% WRAPPER ui title + "" %]
+
+<div class="banner">
+<img alt="YAPC::Asia 2008 - May 15-16th Tokyo, Japan" src="/ya2008/css/themes/ya2008/images/banner.png" width="700" height="300" />
+<span class="copyright">photo by  <a href="http://www.flickr.com/photos/typester/">typester</a> -
+<t>
+<en><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons License by-sa</a></en>
+<ja><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.ja">Creative Commons License by-sa</a></ja>
+</t>
+</span>
+</div>
+
+<h2 class="page-title">
+<t>
+<en>Welcome</en>
+<ja>ようこそ</ja>
+</t>
+</h2>
 
 <p>
 <t>
@@ -6,6 +23,8 @@
 <ja>YAPC::Asia 2008 を 2008/05/15-16 に<a href="[% make_uri('location.html') %]">東京工業大学大岡山キャンパス</a>で開催します。</ja>
 </t>
 </p>
+
+[% PROCESS menus/connected %]
 
 <p>
 <t>
@@ -18,13 +37,9 @@
 <t>
 <en>
 We're working on redesigning the site as well as localizing the UI and content into Japanese as well. The final version of the site will be available around March 1st, when we can announce the sessions schedule and our sponsors.</en>
-<ja>
-<p>
-サイトのデザインや UI の日本語化は現在作業を行っていますので、事前登録の名前などは英語を利用して登録してください。日本語化作業などの完了は 3/1 前後を予定しており、そのタイミングでセッションやスポンサーなども同時にアナウンスできる予定です。
-</p>
-</ja>
+<ja>サイトのデザインや UI の日本語化は現在作業を行っていますので、事前登録の名前などは英語を利用して登録してください。日本語化作業などの完了は 3/1 前後を予定しており、そのタイミングでセッションやスポンサーなども同時にアナウンスできる予定です。</ja>
 </t>
-
+</p>
 [% news = global.news(3);
    IF news.size > 2;
      more = news.pop;
@@ -32,25 +47,19 @@ We're working on redesigning the site as well as localizing the UI and content i
  %]
 
 [% IF news.size %]
-<h2>
-<t>
-<en>Latest News</en>
-<ja>最新ニュース</ja>
-</t>
-</h2>
-[% FOREACH item = news %]
-<div class="news-entry">
- <h3 class="news-header">
-  <span class="news-title">[% item.title %]</span>
-  <span class="news-date">([% date_format(item.datetime, "date_full") %])</span>
- </h3>
- <div class="news-text">
-  [% item.content %]
- </div>
+[% FOREACH n = news %]
+<div class="section entry hentry">
+    <h3 class="entry-title">[% n.title %]</h3>
+    <ul class="meta">
+        <li class="datetime">[% date_format(n.datetime, "date_full") %]</li>
+        <li>{{by}} [% user_info(n.user) %]</li>
+    </ul>
+    <div class="entry-content">
+        [% n.content %]
+    </div>
 </div>
 [% END %]
 [% END %]
-
 [% IF more %]
 <p>
 <t>
@@ -59,5 +68,4 @@ We're working on redesigning the site as well as localizing the UI and content i
 </t>
 </p>
 [% END %]
-
 [% END %]

@@ -1,38 +1,9 @@
-body {
-	background-color: white;
-	color: black;
-	font-family: sans-serif;
-	margin: 0pt auto;
-}
+@charset "utf-8";
 
-#wrapper {
-	margin: 0pt auto;
-	width: 850px;
-}
+@import url(./nukamiso.css);
+@import url(./component.css);
+@import url(./layouts/layout.css);
+@import url(./layouts/layout_wt.css);
+@import url(./themes/ya2008/theme.css);
+@import url(./themes/ya2008/schedule.css);
 
-#menu {
-	float: left;
-	font-size: 90%;
-	width: 150px;
-}
-
-#menu h2 {
-	font-size: 110%;
-}
-
-#menu ul {
-	list-style-image: none;
-	list-style-position: outside;
-	list-style-type: none;
-}
-
-#content {
-	float: right;
-	width: 700px;
-}
-
-#footer {
-	clear: both;
-	font-size: 80%;
-	text-align: right;
-}

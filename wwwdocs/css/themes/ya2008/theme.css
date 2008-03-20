@@ -1,0 +1,264 @@
+@charset "utf-8";
+
+body {
+    background: #C4D6E2 url(images/body_bg.png) repeat-x left top;
+    color: black;
+    font-family: sans-serif;
+}
+
+a {
+  color: #00367A;
+  text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 150%;
+}
+
+h3 {
+    font-size: 130%;
+    font-weight: normal;
+}
+
+h4, h5, h6 {
+    font-size: 120%;
+}
+
+.header {
+    height: 150px;
+    padding: 0;
+    margin-top: 5px;
+    background: transparent url(images/header_bg.png) no-repeat right top;
+}
+
+.site-title img {
+    position: absolute;
+    top: 75px;
+}
+
+#utility-nav {
+    background: #C4D6E2 url(images/utilitybar_bg.png) no-repeat left top;
+    font-size: 90%;
+}
+
+#utility-nav a {
+    color: #112134;
+    text-decoration: underline;
+}
+
+#utility-nav a:hover {
+    text-decoration: none;
+}
+
+#navigation {
+    height: 50px;
+    padding: 0 30px;
+    background: #655659 url(images/navigation_bg.png) no-repeat left center;
+}
+
+#navigation li a {
+    /* display: block; */
+    height: 50px;
+    padding: 0 1.2em;
+    line-height: 50px;
+    color: white;
+    text-decoration: none;
+}
+
+#navigation li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    overflow: auto;
+    background: transparent url(images/container_bg.png) repeat-y right top;
+}
+
+.content {
+    margin-top: 30px;
+}
+
+.content .banner {
+    position: relative;
+    height: 1%;
+    margin: 0 0 15px;
+}
+
+.content .banner img { 
+    position: relative;
+    right: 0;
+}
+
+.content .banner span.copyright { 
+    display: block;
+    position: absolute;
+    bottom: 0.8em;
+    right: 1em;
+    color: white;
+    font-size: 90%;
+}
+
+.content .banner span.copyright img { 
+    position: static;
+}
+
+.content .banner span.copyright a { 
+    color: white;
+    text-decoration: none;
+}
+
+.page-title {
+    font-size: 150%;
+}
+
+.connected { 
+    position: relative;
+    right: -20px;
+    background: #b1b0ae url(images/connected_bg.png) no-repeat left bottom;
+}
+
+.connected h3 { 
+    margin: 0 0 10px;
+    padding: 1em 0 0.8em 1.5em;
+    background: #AD9C27 url(images/connected-title_bg.png) no-repeat left top;
+    color: white;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.connected ul { 
+    margin: 1.5em 0 1.8em 1.5em;
+    font-size: 95%;
+}
+
+.connected ul li { 
+    list-style-type: none;
+    padding: 0.1em 0 0.1em 20px;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+.connected ul li.feed { 
+    background-image: url(images/feed-icon.gif);
+}
+
+.connected ul li.tag { 
+    background-image: url(images/tag-icon.gif);
+}
+
+.connected ul li.twitter { 
+    background-image: url(images/twitter-icon.gif);
+}
+
+.connected ul li a { 
+    color:black;
+}
+
+.error {
+    display: block;
+    padding: 1em;
+    background-color: #ff9;
+}
+
+.entry-title {
+    margin-top: 20px;
+    color: black;
+    font-size: 125%;
+    font-weight: normal;
+}
+
+.meta { 
+    padding: 0.1em 0 0.2em;
+    border: solid #b1b0ae;
+    border-width: 1px 0;
+}
+
+.meta, 
+.meta a {
+    color: #655659;
+    font-size: 90%;
+}
+
+.menu {
+    background: white url(images/sponsors_bg.png) no-repeat right top;
+}
+
+
+/* --- table --- */
+
+table,
+th,
+td {
+    border-color: #859EBC;
+    color: #333;
+    font-weight: normal;
+}
+
+th {
+    background-color: #cac9c8;
+    font-weight: bold;
+}
+
+td {
+    background-color: #f3f6f9;
+}
+
+#sponsors h2 {
+    padding: 0.8em 0;
+    background: transparent url(images/sponsors-h2_bg.png) no-repeat left top;
+    text-align: center;
+    font-size: 110%;
+    font-weight: normal;
+}
+
+#sponsors .sponsors h3 { 
+    margin: 0 1em;
+    padding: 0.5em;
+    border: solid #C4D6E2;
+    border-width: 1px 0;
+    color: #87A2C0;
+    text-align: center;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.footer {
+    background: #57738b url(images/footer_bg.png) no-repeat left top;
+}
+
+.footer .section h2 {
+    font-size: 130%;
+    color: white;
+}
+
+.footer .section ul {
+    margin: 1em 0.2em;
+    list-style-type: none;
+}
+
+.footer .section ul li a {
+    color: #b1b0ae;
+    text-decoration: none;
+}
+
+.footer .section ul li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+address {
+    margin: 0 30px;
+    padding: 1em 0;
+    border-top: 1px dotted white;
+    color: white;
+    font-style: normal;
+}
+
+address a {
+    color: white;
+}
+

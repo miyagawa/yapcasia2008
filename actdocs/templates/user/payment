@@ -1,0 +1,57 @@
+[% WRAPPER ui title = loc('Online payment') %]
+<center>
+
+<table border="1" cellpadding="10" cellspacing="0"><tr><td>
+<table border="0" cellpadding="0" cellspacing="10">
+
+<tr>
+   <th colspan="3">
+      [% loc('<conf> registration', global.conference.name) %]
+      <br />
+      [% order.price %]
+   </th>
+</tr>
+<tr>
+   <td align="right">
+      {{Name}}
+   </td>
+   <td>&nbsp;</td>
+   <td>
+      [% global.request.user.first_name %] [% global.request.user.last_name %]
+   </td>
+</tr>
+<tr>
+   <td align="right">
+      {{Order number}}
+   </td>
+   <td>&nbsp;</td>
+   <td>
+      [% order.order_id %]
+   </td>
+</tr>
+<tr>
+   <td align="right">
+      {{Amount}}
+   </td>
+   <td>&nbsp;</td>
+   <td>
+      [% order.amount %] [% order.currency %]
+   </td>
+</tr>
+<tr>
+   <td colspan="3" align="center">
+     [% form %]
+   </td>
+</tr>
+</table>
+</td></tr></table>
+
+
+</center>
+
+<p>
+ {{Please note that everything regarding your bank account and credit card number}}
+</p>
+
+[% file = "core/bank/${global.config.payment_type}" ; PROCESS $file %]
+[% END %]

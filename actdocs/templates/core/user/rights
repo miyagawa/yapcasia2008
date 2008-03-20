@@ -1,0 +1,53 @@
+<div align="center">
+<form method="POST" action="[% global.request.r.uri %]">
+<table>
+ <tr>
+   <td>{{Name}}</td>
+   [% FOREACH r = right_list %]
+   <td>[% r %]</td>
+   [% END %]
+ </tr>
+ [% FOREACH u = right %]
+   <tr><td>[% user_info(u.user) %]</td>
+   [% FOREACH r = right_list %]
+    <td><input type="checkbox" name="[% u.user.user_id %]-[% r %]" [% IF u.right.$r %]checked="checked" [% END %]/></td>
+   [% END %]
+   </tr>
+ [% END %]
+   <tr>
+   <td><select name="newuser">
+       <option value="" selected="selected" />
+       [% FOREACH u=users %]
+         <option value="[% u.user_id %]">[[% u.login %]] [% user_info(u) %]</option>
+       [% END %]
+       </select>
+   </td>
+   [% FOREACH r = right_list %]
+    <td><input type="checkbox" name="new-[% r %]" /></td>
+   [% END %]
+
+</table>
+
+<input type="submit" name="ok" value="{{Submit}}" />
+
+</form>
+
+</div>
+
+<p>
+ {{The recognised rights are:}}
+</p>
+<ul>
+ <li><tt>staff</tt> -
+  {{Organizer}}
+ </li>
+ <li><tt>orga</tt> -
+  {{Organizer (talks management)}}
+ </li>
+ <li><tt>treasurer</tt> -
+  {{Treasurer (payment management)}}
+ </li>
+ <li><tt>admin</tt> -
+  {{Administrator (rights management)}}
+ </li>
+</ul>

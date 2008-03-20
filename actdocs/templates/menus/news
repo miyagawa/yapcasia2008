@@ -1,0 +1,3 @@
+[% WRAPPER menus/item %]
+<a href="[% make_uri('news') %]">News</a>
+[% END %]

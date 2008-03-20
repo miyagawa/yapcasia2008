@@ -1,0 +1,10 @@
+<!-- admin menu -->
+[% WRAPPER menus/section %]
+{{Admin}}
+[% END %]
+<ul>
+[% WRAPPER menus/item %]
+   <a href="[% make_uri('rights') %]">{{Rights management}}</a>
+[% END %]
+[% PROCESS menus/talks_body %]
+</ul>

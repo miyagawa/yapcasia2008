@@ -1,0 +1,76 @@
+[% IF not ( global.request.user.is_orga
+         or global.request.user.is_staff
+         or global.config.talks_show_schedule ) %]
+{{The schedule is not ready to be seen.}}
+[% ELSE %]
+[% IF todo.size %]
+
+<p>{{The time and place of the following talks haven't been decided yet.}}</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>{{Speaker}}</th>
+            <th>{{Talk title}}</th>
+        [% IF global.config.talks_languages %]<th>{{Language}}</th>[% END %]
+            <th>{{Duration}}</th>
+        </tr>
+    </thead>        
+    <tbody>
+    [% FOREACH t IN todo %]
+        <tr>
+            <td><a href="[% make_uri_info('user', t.user.user_id) %]">[% user_info(t.user) %]</a></td>
+            <td>
+            [% IF t.type == 'Act::Event' %]
+                [% event_link(t) %]
+                [% event_modify_link(t) %]
+            [% ELSE %]
+                [% talk_confirmed_link(t) %]
+                [% talk_modify_link(t) %]
+            [% END %]
+            </td>
+        [% IF global.config.talks_languages %]
+            <td>[% global.config.talks_languages.${t.lang} %]</td>
+        [% END %]
+            <td>[% t.duration %] {{minutes}}</td>
+        </tr>
+    [% END %]
+    </tbody>
+</table>
+[% END %]
+
+<p>{{Talks in bold type have been confirmed by their respective speakers.}}</p>
+
+[% FOREACH d IN table.keys.sort %]
+[% date = d.replace('$', ' 00:00:00' ) %]
+<div class="section schedule" id="[% d %]">
+    <h3>[% date_format(date, 'date_full') | ucfirst %]</h3>
+    <ul>
+        <li class="ical"><a href="[% make_uri('timetable.ics') %]">{{iCal export}}</a></li>
+    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>{{Time}}</th>
+            [% FOREACH r IN room.keys.sort %]
+                <th colspan="[% width.$r.$d %]">[% global.config.rooms.$r %]</th>
+            [% END %]
+            </tr>
+        </thead>
+        <tbody> 
+        [% FOREACH row IN table.$d %]
+            <tr>
+            [% FOREACH col IN row %]
+            [% IF loop.first %]
+                <th>[% col %]</th>
+            [% ELSE %]
+                <td [% IF col.height AND col.height > 1 %]rowspan="[% col.height %]"[% END %] [% IF col.room %]class="[% col.room %]"[% IF col.room.match('^(?:out|venue)$') %] colspan="[% maxwidth.$d %]"[% END %][% END %]>[% timeslot(col) %]</td>
+            [% END %]
+            [% END %]
+            </tr>
+        [% END %]
+        </tbody>
+    </table>
+</div>
+[% END %]
+[% END %]

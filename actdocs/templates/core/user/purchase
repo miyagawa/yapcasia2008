@@ -1,0 +1,29 @@
+<h2 class="page-title">[% loc('Ticket for <conference name>.', global.conference.name) %]</h2>
+
+<form method="POST" action="[% global.request.r.uri %]">
+    <fieldset>
+        <legend>{{Purchase}}</legend>
+        <dl>
+            <dt><label for="form-price">{{Price}}: </label></dt>
+            <dd>
+                <select name="price" id="form-price">
+                [% FOREACH p=prices %]
+                    <option value="[% p.price_id %]">[% p.name %] [% p.amount %] [% currency %]</option>
+                [% END %]
+                </select>
+            </dd>
+            <dt><label for="form-donation">{{Donation}}: </label></dt>
+            <dd>
+                <input name="donation" id="form-donation" type="text" size="5" maxlength="5" />
+                [% currency %]
+            </dd>
+        <dl>
+        <div>
+            <input type="submit" name="purchase" value="{{Buy now!}}" />
+        </div>
+    </fieldset>
+</form>
+
+<p>{{Please note that everything regarding your bank account and credit card number}}</p>
+
+[% file = "core/bank/${global.config.payment_type}" ; PROCESS $file %]

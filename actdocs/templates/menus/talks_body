@@ -1,0 +1,41 @@
+[% WRAPPER menus/item %]
+<a href="[% make_uri('talks') %]">
+ {{Presentations}}
+</a>
+[% END %]
+[% IF global.config.talks_show_schedule OR global.request.user.is_orga %]
+   [% WRAPPER menus/item %]
+   <a href="[% make_uri('schedule') %]">
+    {{Schedule}}
+   </a>
+   [% END %]
+   [% WRAPPER menus/item %]
+   <a href="[% make_uri('timetable.ics') %]">
+    {{iCal export}}
+   </a>
+   [% END %]
+[% END %]
+[% IF global.request.user.is_orga %]
+   [% WRAPPER menus/item %]
+   <a href="[% make_uri('tracks') %]">
+    {{Tracks}}
+   </a>
+   [% END %]
+   [% WRAPPER menus/item %]
+   <a href="[% make_uri('ical_import') %]">
+    {{iCal import}}
+   </a>
+   [% END %]
+   [% WRAPPER menus/item %]
+   <a href="[% make_uri('export_talks') %]">
+    {{CSV export}}
+   </a>
+   [% END %]
+[% END %]
+[% IF global.config.talks_submissions_open OR global.request.user.is_orga %]
+   [% WRAPPER menus/item %]
+   <a href="[% make_uri('newtalk') %]">
+    {{Submit a talk proposal}}
+   </a>
+   [% END %]
+[% END %]

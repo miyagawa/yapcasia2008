@@ -1,0 +1,15 @@
+div.header, 
+div.container {
+    width: 850px;
+}
+
+div.content {
+    float: right;
+    width: 580px;
+}
+
+div.menu {
+    float: left;
+    clear: left;
+    width: 250px;
+}

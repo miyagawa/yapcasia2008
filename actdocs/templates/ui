@@ -1,50 +1,52 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Traditional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-traditional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="[% global.request.language %]" xml:lang="[% global.request.language %]">
-
-<head>
-<!-- Document Metadata -->
-<meta http-equiv="Content-Language" content="[% global.request.language %]" />
-<!-- Atom news feed -->
-<link rel="alternate" type="application/atom+xml" title="[% global.conference.name %]" href="http://feeds.feedburner.com/YapcAsia" />
-<link rel="alternate" type="application/atom+xml" title="[% global.conference.name %]" href="http://feeds.feedburner.com/YapcAsiaJa" />
-
-<!-- analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-52226-3");
-pageTracker._initData();
-pageTracker._trackPageview();
-</script>
-
-<title>[%- IF title -%][% title | html %]:[%- END -%] YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN</title>
-
-<!-- CSS Stylesheets -->
-<link rel="stylesheet" href="/ya2008/css/style.css" type="text/css" />
-
-<!-- Favorite icon -->
-<link rel="shortcut icon" type="image/png" href="/favicon.png" />
-</head>
-
-<body>
-<div id="wrapper">
-
-  <div id="header">
-    <h1>YAPC::Asia 2008</h1>
-  </div>
-
-<div id="menu">[% PROCESS menu %]</div>
-<div id="content">
-[% content %]
-</div>
-
-  <div id="footer">
-    Shibuya Perl Mongers - Powered by <a href="http://act.mongueurs.net/">Act</a>
-  </div>
-</div>
-
-</body>
+    <head profile="http://purl.org/net/ns/metaprof">
+        <!-- Document Metadata -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Language" content="[% global.request.language %]" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <!-- Atom news feed -->
+        <link rel="alternate" type="application/atom+xml" title="[% global.conference.name %]" href="http://feeds.feedburner.com/YapcAsia" />
+        <link rel="alternate" type="application/atom+xml" title="[% global.conference.name %]" href="http://feeds.feedburner.com/YapcAsiaJa" />
+        <!-- analytics -->
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+            var pageTracker = _gat._getTracker("UA-52226-3");
+            pageTracker._initData();
+            pageTracker._trackPageview();
+        </script>
+        <title>[%- IF title -%][% title | html %]:[%- END -%] YAPC::Asia 2008 - May 15-16th in Tokyo, JAPAN</title>
+        <!-- CSS Stylesheets -->
+        <link rel="stylesheet" href="/ya2008/css/style.css" type="text/css" />
+        <!-- Favorite icon -->
+        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    </head>
+    <body>
+        <div class="header">
+            [% PROCESS menus/user %]
+            <h1 class="site-title"><a href="/ya2008/"><img alt="YAPC::Asia 2008" src="/ya2008/css/themes/ya2008/images/yapc2008_logo.png" width="250" height="70" /></a></h1>
+            [% PROCESS menu %]
+        </div>
+        <div class="container">
+            <div class="content section">
+                [% IF title %]<h2 class="page-title">[% title %]</h2>[% END %]
+                [% content %]
+            </div>
+            <div class="section" id="sponsors">
+                <h2>Sponsors</h2>
+                [% PROCESS sponsors %]
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-content">
+                 [% PROCESS footer %]
+            </div>
+            <address><a href="http://shibuya.pm.org/">Shibuya Perl Mongers</a> - Powered by <a href="http://act.mongueurs.net/">Act</a></address>
+        </div>
+    </body>
 </html>

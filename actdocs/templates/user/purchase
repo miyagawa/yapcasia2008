@@ -1,0 +1,5 @@
+[% WRAPPER ui title = loc("Online payment") %]
+
+[% PROCESS core/user/purchase %]
+
+[% END %]

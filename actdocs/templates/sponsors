@@ -1,0 +1,37 @@
+<div class="sponsors" id="gold-sponsors">
+     <h3>Gold Sponsors</h3>
+     <ul>
+         <li>
+         <t>
+         <ja><a href="http://mtl.recruit.co.jp/"></ja>
+         <en><a href="http://mtl.recruit.co.jp/about-en.html"></en>
+         </t>
+         <img alt="Recruit Co.,Ltd." src="/ya2008/css/themes/ya2008/images/sponsors/gold/logo-recruit.jpg" width="120" height="30" /></a></li>
+         <li><a href="http://www.livedoor.com/"><img alt="livedoor Co.,Ltd." src="/ya2008/css/themes/ya2008/images/sponsors/gold/logo-livedoor.jpg" width="120" height="26" /></a></li>
+         <li><a href="http://www.infomarks.co.jp/"><img alt="infomarks Co.,Ltd." src="/ya2008/css/themes/ya2008/images/sponsors/gold/logo-infomarks.jpg" width="120" height="36" /></a></li>
+         <li><a href="http://www.dena.ne.jp/"><img alt="DeNA Co.,Ltd." src="/ya2008/css/themes/ya2008/images/sponsors/gold/logo-dena.jpg" width="120" height="33" /></a></li>
+         <li><a href="http://mixi.co.jp/business.html"><img alt="mixi, Inc," src="/ya2008/css/themes/ya2008/images/sponsors/gold/logo-mixi.jpg" width="120" height="34" /></a></li>
+         <li><a href="http://www.sixapart.jp/"><img alt="Six Apart, Ltd." src="/ya2008/css/themes/ya2008/images/sponsors/gold/logo-sixapart.jpg" width="120" height="70" /></a></li>
+     </ul>
+</div>
+
+<div class="sponsors" id="media-sponsors">
+     <h3>Media Sopnsors</h3>
+     <ul>
+        <li><a href="http://www.oreilly.co.jp/"><img alt="O'Reilly Japan, Inc." src="/ya2008/css/themes/ya2008/images/sponsors/media/logo-oreilly.jpg" width="120" height="32" /></a></li>
+        <li><a href="http://gihyo.jp/"><img alt="Gijutsu-Hyohron Co., Ltd." src="/ya2008/css/themes/ya2008/images/sponsors/media/logo-gihyo.jpg" width="120" height="20" /></a></li>
+     </ul>
+</div>
+
+<div class="sponsors" id="silver-sponsors">
+     <h3>Silver Sponsors</h3>
+     <ul>
+         <li><a href="http://www.activestate.com"><img alt="ActiveState Software Inc." src="/ya2008/css/themes/ya2008/images/sponsors/silver/logo-activestate.jpg" width="120" height="42" /></a></li>
+         <li><a href="http://info.dwango.co.jp/"><img alt="DWANGO Co.,Ltd." src="/ya2008/css/themes/ya2008/images/sponsors/silver/logo-dwango.jpg" width="120" height="20" /></a></li>
+         <li><a href="http://www.adways.net/"><img alt="ADWAYS CO., LTD." src="/ya2008/css/themes/ya2008/images/sponsors/silver/logo-adways.jpg" width="120" height="38" /></a></li>
+         <li><a href="http://www.endeworks.jp/"><img alt="endeworks Co.,Ltd." src="/ya2008/css/themes/ya2008/images/sponsors/silver/logo-endeworks.jpg" width="120" height="34" /></a></li>
+         <li><a href="http://labs.cybozu.co.jp/"><img alt="Cybozu Labs, Inc." src="/ya2008/css/themes/ya2008/images/sponsors/silver/logo-cybozulabs.jpg" width="120" height="20" /></a></li>
+         <li><a href="http://www.gaiax.co.jp/"><img alt="GaiaX Co. Ltd." src="/ya2008/css/themes/ya2008/images/sponsors/silver/logo-gaiax.jpg" width="120" height="44" /></a></li>
+         <li><a href="https://alpha.cgios.net/alpha/cgios"><img alt="cgios technologies Inc." src="/ya2008/css/themes/ya2008/images/sponsors/silver/logo-cgios.jpg" width="120" height="64" /></a></li>
+         <li><a href="http://frontier-blue.net/">frontier-blue.net</a></li>
+</div>

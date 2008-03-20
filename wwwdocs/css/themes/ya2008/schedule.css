@@ -1,0 +1,49 @@
+/*~------------------------------------------------------------------*/
+/* Timetable colours                                                 */
+/*~------------------------------------------------------------------*/
+
+.schedule ul { 
+    margin: 0;
+}
+
+.schedule ul li.ical { 
+    width: 95%;
+    list-style-type: none;
+    padding-right: 18px;
+    background: transparent url(images/ical-icon.gif) no-repeat right center;
+    text-align: right;
+    font-size: 95%;
+}
+
+.schedule table {
+    background-color: #D9D7DC;
+}
+
+.venue {
+    background-color: #FFCC00;
+}
+
+.out {
+    background-color: #EEEEEE;
+}
+
+.r1 {
+    background-color: #FFD3D3;
+}
+
+.r2 {
+    background-color: #D3FFD3;
+}
+
+.r3 {
+    background-color: #D3D3FF;
+}
+
+.r4 {
+    background-color: #FFFFD3;
+}
+
+.r5 {
+    background-color: #D3FFFF;
+}
+

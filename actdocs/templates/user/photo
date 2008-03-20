@@ -1,0 +1,38 @@
+[% WRAPPER ui title = loc("Your photo") %]
+
+[% IF error;
+     WRAPPER error_ui;
+       loc("Image couldn't be read. Please upload your picture in one of the following formats:");
+       formats.join(', ');
+     END;
+   END
+%]
+
+<div class="picture avatar small">
+    [%- IF global.request.user.photo_name %]
+    <img src="[% photo_uri %]">
+    [%- ELSE %]
+    <img src="/ya2008/css/themes/ya2008/images/no_photo.png" width="200" height="200" />
+    [% END %]
+</div>
+
+<p>{{This photo will probably end up on the conference who's who,}}<tt>;-)</tt></p>
+
+<form id="avatar-form" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <legend>{{Your photo}}</legend>
+	    <dl>
+	        <dt><label for="photo">file: </label></dt>
+	        <dd>
+	            <input type="file" id="photo" name="photo" />
+            </dd>
+        </dl>
+    </fieldset>
+    <div>
+    [%- IF global.request.user.photo_name %]
+        <input type="submit" name="delete" value="{{Delete Photo}}" />
+    [% END %]
+        <input type="submit" name="update" value="{{Update Photo}}" />
+    </div>
+</form>
+[% END %]

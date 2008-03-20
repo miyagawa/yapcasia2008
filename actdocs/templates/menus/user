@@ -1,0 +1,51 @@
+<ul id="utility-nav">
+[% IF global.request.user %]
+        [% IF global.request.action == 'user' %]
+                <li class="here">[% global.request.user.login %]</li>
+        [% ELSE %]
+                <li>
+                    <t>
+                        <en>Hi</en>
+                        <ja>こんにちは</ja>
+                    </t>
+                        <a href="[% make_uri_info('user', global.request.user.user_id) %]">[% global.request.user.login %]</a>
+                    <t>
+                        <en>,</en>
+                        <ja>さん</ja>
+                    </t>
+                </li>
+        [% END %]
+
+        [% UNLESS global.request.user.participation OR global.config.closed %]
+                <li><a href="[% make_uri('register') %]">{{Register}}</a></li>
+        [% END %]
+
+        [% IF global.request.action == 'main' %]
+                <li class="here"><t><en>Menu</en><ja>メニュー</ja></t></li>
+        [% ELSE %]
+                <li><a href="[% make_uri('main') %]">{{Edit profile}}</a></li>
+        [% END %]
+
+        <li><a href="[% make_uri('logout') %]">{{Logout}}</a></li>
+
+        [% ELSE %]
+
+        [% IF global.request.action == 'login' %]
+                <li class="here">{{Login}}</li>
+        [% ELSE %]
+                <li><a href="[% make_uri('main') %]">{{Login}}</a></li>
+        [% END %]
+
+        [% UNLESS global.config.closed %]
+                [% IF global.request.action == 'register' %]
+                        <li class="here">{{Registration}}</li>
+                [% ELSE %]
+                        <li><a href="[% make_uri('register') %]">{{Registration}}</a></li>
+                [% END %]
+        [% END %]
+[% END %]
+
+[% FOREACH lang = global.languages %]
+                <li><a href="[% lang.uri %]">&#x2192;&nbsp;[% lang.name %]</a></li>
+[% END %]
+</ul>
