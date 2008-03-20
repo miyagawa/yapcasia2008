@@ -10,7 +10,7 @@
                     </t>
                         <a href="[% make_uri_info('user', global.request.user.user_id) %]">[% global.request.user.login %]</a>
                     <t>
-                        <en>,</en>
+                        <en></en>
                         <ja>さん</ja>
                     </t>
                 </li>
