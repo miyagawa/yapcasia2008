@@ -1,0 +1,52 @@
+[% WRAPPER ui title = "How to pay" %]
+
+<style>
+.pay-capture {
+  border: 1px #888 solid;
+  width: 500px;
+}
+</style>
+<script>
+function email(local, domain) {
+  document.write( local + '@' + domain );
+}
+</script>  
+
+<p><img src="/ya2008/images/payment-1.png" class="pay-capture" /></p>
+
+<p><a href="/ya2008/main">プロフィール画面</a>から、「カンファレンスのチケットを購入する」を選択します。</p>
+
+<p><img src="/ya2008/images/payment-2.png" class="pay-capture" /></p>
+
+<p>チケットの種類を選択します。学生割引を選択した場合、当日会場受付にて学生証の提示が必要です。YAPC::Asia 運営委員会に寄付したい場合、その額を入力してください。</p>
+
+<p><img src="/ya2008/images/payment-3.png" class="pay-capture" /></p>
+
+<p>支払い額を確認し、クレジットカード支払いをクリックします。</p>
+
+<p><img src="/ya2008/images/payment-4.png" class="pay-capture" /></p>
+
+<p>PayPal に移動します。支払先は module.jp、商品は YAPC::Asia 2008 参加登録費と表示されます。PayPal アカウントを持っていない場合、クレジットカードの情報を入力し、「注文を確認して続行」をクリックします。PayPal アカウントを持っている場合は右のダイアログからサインインします。</p>
+
+<p>支払いの確認画面にて詳細を確認し、「今すぐ \3500 支払う」を選択します。</p>
+
+<p><img src="/ya2008/images/payment-5.png" class="pay-capture" /></p>
+
+<p>決済が完了しました。スクリーンショットは英語で表示されていますが、日本語で決済を行った場合、日本語のメッセージが表示されます。「に戻る module.jp」ボタンをクリックして、YAPC::Asia 2008 サイトに戻ります。</p>
+
+<p><img src="/ya2008/images/payment-6.png" class="pay-capture" /></p>
+
+<p>メインページにて、「チケットは購入済みです」とメッセージが表示されることを確認してください。</p>
+
+<p><img src="/ya2008/images/payment-7.png" class="pay-capture" /></p>
+
+<p><script>email('root', 'mongueurs.net')</script> と <script>email('service-jp', 'paypal.com')</script> より、支払い確認の Email が送信されます。</p>
+
+<p>PayPal にて支払いを行ったにもかかわらず、プロフィールページにて「チケットはまだ購入していません」と表示される場合、決済処理にエラーがあったことが考えられます。以下の情報を <script>email('team', 'yapcasia.org')</script> までメールにて送信してください。
+<ul>
+<li>PayPal から送信されるメールのコピー</li>
+<li>PayPal で使用した Email アドレス</li>
+<li>YAPC::Asia サイトのユーザ ID (http://conferences.yapcasia.org/ya2008/user/XXXX の数字部分)</li>
+</ul>
+
+[% END %]
