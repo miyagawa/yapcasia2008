@@ -1,0 +1,10 @@
+<div class="section entry hentry">
+    <h2 class="entry-title">[% title %]</h2>
+    <ul class="meta">
+        <li class="datetime">[% date_format(n.datetime, "date_full") %]</li>
+        <li>{{by}} [% user_info(n.user) %]</li>
+    </ul>
+    <div class="entry-content">
+        [% content %]
+    </div>
+</div>

@@ -2,7 +2,7 @@
 
 body {
     background: #C4D6E2 url(images/body_bg.png) repeat-x left top;
-    color: black;
+    color: #0d0015;
     font-family: sans-serif;
 }
 
@@ -165,10 +165,20 @@ h4, h5, h6 {
 }
 
 .entry-title {
-    margin-top: 20px;
+    margin-top: 2.5em;
     color: black;
-    font-size: 125%;
-    font-weight: normal;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.entry-title a { 
+    color: #393f4c;
+    text-decoration: none;
+}
+
+.entry-title a:hover { 
+    color: #AD9C27;
+    text-decoration: none;
 }
 
 .meta { 

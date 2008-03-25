@@ -34,6 +34,7 @@
 </p>
 
 
+
 [% news = global.news(3);
    IF news.size > 2;
      more = news.pop;
@@ -43,7 +44,7 @@
 [% IF news.size %]
 [% FOREACH n = news %]
 <div class="section entry hentry">
-    <h3 class="entry-title">[% n.title %]</h3>
+    <h3 class="entry-title"><a href="[% n.link %]" rel="bookmark">[% n.title %]</a></h3>
     <ul class="meta">
         <li class="datetime">[% date_format(n.datetime, "date_full") %]</li>
         <li>{{by}} [% user_info(n.user) %]</li>
@@ -62,4 +63,5 @@
 </t>
 </p>
 [% END %]
+
 [% END %]

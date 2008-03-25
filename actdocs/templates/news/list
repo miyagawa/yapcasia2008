@@ -1,16 +1,20 @@
 [% WRAPPER ui title = loc("News") %]
-[% IF news.size %]
+
+[% IF news.size %] 
 [% FOREACH n = news %]
-<div class="section">
-     <h2 class="entry-title">[% n.title %]</h2>
-     <ul class="meta">
-         <li>[% date_format(n.datetime, 'datetime_full') %]</li>
-         <li>{{by}} [% user_info(n.user) %]</li>
-     </ul>
-     [% texts.${loop.index} %]
+<div class="section entry hentry">
+    <h2 class="entry-title"><a href="[% n.link %]" rel="bookmark">[% n.title %]</a></h2>
+    <ul class="meta">
+        <li class="datetime">[% date_format(n.datetime, "date_full") %]</li>
+        <li>{{by}} [% user_info(n.user) %]</li>
+    </ul>
+    <div class="entry-content">
+        [% texts.${loop.index} %]
+    </div>
 </div>
 [% END %]
 [% ELSE %]
 <p>{{No news yet!}}</p>
 [% END %]
+
 [% END %]
