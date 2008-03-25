@@ -1,8 +1,8 @@
 <div class="vcard">
   <div class="picture small avator">
-    [%- IF photo_name %]
+    [% IF photo_name %]
     <img alt="{{Name}}" src="/[% global.config.general_dir_photos %]/[% photo_name %]" class="photo" />
-    [%- ELSE %]
+    [% ELSE %]
     <img alt="{{Name}}" src="/ya2008/css/themes/ya2008/images/no_photo.png" width="200" height="200" />
     [% END %]
   </div>
@@ -10,12 +10,16 @@
 <!-- name -->
 <dt>{{Name}}</dt>
 <dd class="n">
-  [%- IF pseudonymous %]
+  [% IF pseudonymous %]
   [% nick_name %]
-  [%- ELSE %]
-  [% loc("salutation_${salutation}") IF salutation %]
-  <span class="family-name">[% first_name %]</span>
-  <span class="given-name">[% last_name %]</span>
+  [% ELSE %]
+  [% IF first_name.match('^[a-zA-Z ]+$') %]
+  <span class="given-name">[% first_name %]</span>
+  <span class="family-name">[% last_name %]</span>
+  [% ELSE %]
+  <span class="family-name">[% last_name %]</span>
+  <span class="given-name">[% first_name %]</span>
+  [% END %]
   [% "(&lrm;${nick_name}&lrm;)" IF nick_name %]
   [% END %]
 </dd>
