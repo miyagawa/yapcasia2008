@@ -10,6 +10,7 @@
 <!-- name -->
 <dt>{{Name}}</dt>
 <dd class="n">
+[% "<strong>" IF committed %]
   [% IF pseudonymous %]
   [% nick_name %]
   [% ELSE %]
@@ -22,6 +23,7 @@
   [% END %]
   [% "(&lrm;${nick_name}&lrm;)" IF nick_name %]
   [% END %]
+[% "</strong>" IF committed %]
 </dd>
 <!-- /name -->
 <!-- country -->
