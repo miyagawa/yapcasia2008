@@ -42,7 +42,7 @@
         IF user.pseudonymous;
             user.nick_name;
         ELSE;
-            IF user.first_name.match('\p{Han}');
+            IF user.first_name.match('[\p{Han}\p{Hiragana}]');
             "${user.last_name}${user.first_name}";
             ELSE;
             "${user.first_name} ${user.last_name}";

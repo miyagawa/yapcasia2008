@@ -14,7 +14,7 @@
   [% IF pseudonymous %]
   [% nick_name %]
   [% ELSE %]
-  [% IF first_name.match('\p{Han}') %]
+  [% IF first_name.match('[\p{Han}\p{Hiragana}]') %]
   <span class="family-name">[% last_name %]</span><span class="given-name">[% first_name %]</span>
   [% ELSE %]
   <span class="given-name">[% first_name %]</span>
