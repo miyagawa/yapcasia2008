@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
+use utf8;
 use Encode;
 use SVG;
 use SVG::Parser;
@@ -8,6 +9,7 @@ use Text::CSV_XS;
 use Locale::Country;
 
 Locale::Country::rename_country('tw' => 'Taiwan');
+Locale::Country::rename_country('kr' => 'Korea');
 
 my $base_file = "namecard_2x5.svg";
 my $csv_file  = shift @ARGV || "sample.csv";
@@ -21,6 +23,7 @@ $csv->column_names(@$header);
 my $out_dir = "$ENV{HOME}/Sites/yapc-nameplates";
 
 my $font = '&quot;M+ 1c&quot;';
+#my $font = 'Helvetica';
 
 my @users;
 while (!$csv->eof) {
@@ -38,17 +41,24 @@ while (my @chunk = splice(@users, 0, 10)) {
     my $svg = $parser->parse_file($base_file);
 
     for my $ref (@chunk) {
-        $svg->text(x => $ox + 50, y => $oy + 60, style => { 'font-family' => $font, 'font-weight' => 'bold', 'color' => 'black', 'font-size' => 24 })->cdata(get_name($ref));
-        $svg->text(x => $ox + 50, y => $oy + 80, style => { 'font-family' => $font, 'color' => 'black', 'font-size' => 12 })->cdata(($ref->{pm_group} ? "$ref->{pm_group} / " : "") . code2country($ref->{country}));
+        my $name = get_name($ref);
+        my $size = length($name) > 20 ? 18 
+                 : length($name) > 16 ? 20 
+                 : 24;
+        $svg->text(x => $ox + 40, y => $oy + 55, style => { 'font-family' => $font, 'font-weight' => 'bold', 'color' => 'black', 'font-size' => $size })->cdata($name);
+        $svg->text(x => $ox + 40, y => $oy + 75, style => { 'font-family' => $font, 'color' => 'black', 'font-size' => 11 })->cdata(($ref->{pm_group} ? "$ref->{pm_group} / " : "") . code2country($ref->{country}));
+        if ($ref->{company}) {
+            $svg->text(x => $ox + 40, y => $oy + 90, style => { 'font-family' => $font, color => 'black', 'font-size' => 11 })->cdata( decode_utf8($ref->{company}) );
+        }
 
         my $role = $ref->{has_talk} ? 'SPEAKER' :
             ($ref->{is_orga} || $ref->{is_staff}) ? 'STAFF' : '';
 
         if ($role) {
-            $svg->text(x => $ox + 50, y => $oy + 120, style => { 'font-family' => $font, 'font-weight' => 'bold', color => 'black', 'font-size' => 16 })->cdata($role);
+            $svg->text(x => $ox + 40, y => $oy + 126, style => { 'font-family' => $font, 'font-weight' => 'bold', color => 'black', 'font-size' => 16 })->cdata($role);
         }
 
-        $svg->text(x => $ox + 50, y => $oy + 140, style => { 'font-family' => $font, color => 'black', 'font-size' => 10 })->cdata($ref->{user_id});
+        $svg->text(x => $ox + 266, y => $oy + 16, style => { 'font-family' => $font, color => 'black', 'font-size' => 10 })->cdata($ref->{user_id});
 
         $ox = $ox == 0 ? 296 : 0;
         $oy+= 168 if $ox == 0;
@@ -57,6 +67,7 @@ while (my @chunk = splice(@users, 0, 10)) {
     my $outfile = "$out_dir/$first_id.svg";
     open my $out, ">:utf8", $outfile or die "$outfile: $!";
     print $out $svg->xmlify;
+    warn $outfile, "\n";
 }
 
 sub get_name {
