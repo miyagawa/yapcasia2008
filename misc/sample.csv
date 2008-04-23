@@ -1,0 +1,18 @@
+user_id,login,email,salutation,first_name,last_name,nick_name,country,town,pm_group,is_orga,is_staff,has_talk,has_paid,tshirt_size,nb_family,company,address,vat
+154,cog,cog@example.com,1,José,Castro,cog,pt,Lisboa,Lisbon.pm,,,4,0,,0,"log - Open Source Consulting","",""
+224,acme,acme@example.com,1,Leon,Brocard,acme,gb,London,London.pm,,,1,0,,0,"","",""
+260,clkao,clkao@example.com,1,Chia-liang,Kao,clkao,gb,London,"London.pm, Taipei.pm",,,2,0,,0,"Best Practical Solutions","",""
+273,larry,larry@example.com,,Larry,Wall,,us,,,,,1,0,,0,,,
+284,cwest,casey@example.com,1,Casey,West,cwest,us,Pittsburgh,Pittsburgh.pm,,,1,0,M,0,CombineNet,"",""
+302,khaos,karen@example.com,,Karen,Pauley,"",jp,"",Belfast.pm,,1,0,0,,0,"","",""
+308,marty,marty+perl@example.com,1,Marty,Pauley,"",jp,Tokyo,Belfast.pm,,1,0,0,XL,0,"","",""
+439,lathos,simon@example.com,,Simon,Cozens,"",jp,"",Kansai.pm,,,0,0,L,0,"","",""
+539,kim,kim.ahlstrom@example.com,1,Kim,Ahlström,Kimtaro,se,Åkersberga,"",,,0,1,M,0,"","",""
+540,obra,jesse@example.com,1,Jesse,Vincent,"",us,"",London.pm,,,3,0,XXL,0,"Best Practical Solutions, LLC","",""
+780,schwern,schwern@example.com,1,Michael,Schwern,Schwern,us,"Portland, OR",PDX.pm,,,4,0,M,0,Schwerniverse,"",""
+1656,dohyun,jkim@example.com,,Jeff,Kim,"",us,"New York",NY.pm,,,1,0,"",0,"","",""
+1681,jrockway,jrockway@example.com,1,Jonathan,Rockway,jrockway,us,Chicago,"Windy City.pm",,,1,0,,0,"Infinity Interactive","",""
+1695,miyagawa,miyagawa@example.com,1,Tatsuhiko,Miyagawa,"",us,"San Francisco",Shibuya.pm,1,,3,1,M,0,"Six Apart","",""
+1798,nuffin,nothingmuch@example.com,1,Yuval,Kogman,nothingmuch,il,"Tel Aviv",Israel.pm,,,2,0,M,0,"Infinity Interactive","",""
+2277,hanekomu,hanekomu@example.com,1,Marcel,Grünauer,hanekomu,at,Vienna,Vienna.pm,,,0,1,,0,"","",""
+3742,テスト,test@example.com,1,太郎,山田,"",jp,Tokyo,"",,,3,0,,0,"","",""
