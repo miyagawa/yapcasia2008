@@ -43,22 +43,22 @@ while (my @chunk = splice(@users, 0, 10)) {
     for my $ref (@chunk) {
         my $name = get_name($ref);
         my $size = length($name) > 20 ? 18 
-                 : length($name) > 16 ? 20 
+                 : length($name) > 16 ? 21 
                  : 24;
-        $svg->text(x => $ox + 40, y => $oy + 55, style => { 'font-family' => $font, 'font-weight' => 'bold', 'color' => 'black', 'font-size' => $size })->cdata($name);
-        $svg->text(x => $ox + 40, y => $oy + 75, style => { 'font-family' => $font, 'color' => 'black', 'font-size' => 11 })->cdata(($ref->{pm_group} ? "$ref->{pm_group} / " : "") . code2country($ref->{country}));
+        $svg->text(x => $ox + 35, y => $oy + 55, style => { 'font-family' => $font, 'font-weight' => 'bold', 'color' => 'black', 'font-size' => $size })->cdata($name);
+        $svg->text(x => $ox + 35, y => $oy + 75, style => { 'font-family' => $font, 'color' => 'black', 'font-size' => 11 })->cdata(($ref->{pm_group} ? "$ref->{pm_group} / " : "") . code2country($ref->{country}));
         if ($ref->{company}) {
-            $svg->text(x => $ox + 40, y => $oy + 90, style => { 'font-family' => $font, color => 'black', 'font-size' => 11 })->cdata( decode_utf8($ref->{company}) );
+            $svg->text(x => $ox + 35, y => $oy + 90, style => { 'font-family' => $font, color => 'black', 'font-size' => 11 })->cdata( decode_utf8($ref->{company}) );
         }
 
         my $role = $ref->{has_talk} ? 'SPEAKER' :
             ($ref->{is_orga} || $ref->{is_staff}) ? 'STAFF' : '';
 
         if ($role) {
-            $svg->text(x => $ox + 40, y => $oy + 126, style => { 'font-family' => $font, 'font-weight' => 'bold', color => 'black', 'font-size' => 16 })->cdata($role);
+            $svg->text(x => $ox + 35, y => $oy + 126, style => { 'font-family' => $font, 'font-weight' => 'bold', color => 'black', 'font-size' => 16 })->cdata($role);
         }
 
-        $svg->text(x => $ox + 266, y => $oy + 16, style => { 'font-family' => $font, color => 'black', 'font-size' => 10 })->cdata($ref->{user_id});
+        $svg->text(x => $ox + 266, y => $oy + 16, style => { 'font-family' => $font, color => 'black', 'font-size' => 8 })->cdata($ref->{user_id});
 
         $ox = $ox == 0 ? 296 : 0;
         $oy+= 168 if $ox == 0;
