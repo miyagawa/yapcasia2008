@@ -10,7 +10,7 @@ use Locale::Country;
 Locale::Country::rename_country('tw' => 'Taiwan');
 
 my $base_file = "namecard_2x5.svg";
-my $csv_file  = shift || "sample.csv";
+my $csv_file  = shift @ARGV || "sample.csv";
 
 open my $fh, $csv_file or die $!;
 
@@ -26,7 +26,6 @@ my @users;
 while (!$csv->eof) {
     my $ref = $csv->getline_hr($fh);
     next unless $ref->{user_id};
-    warn $ref->{user_id};
     push @users, $ref;
 }
 
@@ -48,6 +47,8 @@ while (my @chunk = splice(@users, 0, 10)) {
         if ($role) {
             $svg->text(x => $ox + 50, y => $oy + 120, style => { 'font-family' => $font, 'font-weight' => 'bold', color => 'black', 'font-size' => 16 })->cdata($role);
         }
+
+        $svg->text(x => $ox + 50, y => $oy + 140, style => { 'font-family' => $font, color => 'black', 'font-size' => 10 })->cdata($ref->{user_id});
 
         $ox = $ox == 0 ? 296 : 0;
         $oy+= 168 if $ox == 0;
