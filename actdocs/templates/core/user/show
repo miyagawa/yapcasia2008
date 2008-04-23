@@ -14,12 +14,11 @@
   [% IF pseudonymous %]
   [% nick_name %]
   [% ELSE %]
-  [% IF first_name.match('^[a-zA-Z ]+$') %]
-  <span class="given-name">[% first_name %]</span>
-  <span class="family-name">[% last_name %]</span>
+  [% IF first_name.match('\p{Han}') %]
+  <span class="family-name">[% last_name %]</span><span class="given-name">[% first_name %]</span>
   [% ELSE %]
-  <span class="family-name">[% last_name %]</span>
   <span class="given-name">[% first_name %]</span>
+  <span class="family-name">[% last_name %]</span>
   [% END %]
   [% "(&lrm;${nick_name}&lrm;)" IF nick_name %]
   [% END %]
