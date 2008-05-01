@@ -164,11 +164,11 @@
     [% ELSE %]
       <select name="duration">
        <option value=""[% ' selected="selected"' UNLESS duration %] />
-       <!-- option value="lightning"[% ' selected="selected"' IF lightning %]>
+       <option value="lightning"[% ' selected="selected"' IF lightning %]>
           {{Lightning talk}}
-       </option -->
+       </option>
        [% FOREACH d = global.config.talks_durations.keys.nsort %]
-       <option value="[% d %]"[% ' selected="selected"' IF d == duration %]>[% d %] {{minutes}}</option>
+       <!--option value="[% d %]"[% ' selected="selected"' IF d == duration %]>[% d %] {{minutes}}</option-->
        [% END %]
        {{If the proposed durations do not quite fit your talk, please}}
      [% END %]
