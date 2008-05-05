@@ -52,7 +52,12 @@
         <thead>
             <tr>
                 <th>{{Time}}</th>
-            [% FOREACH r IN room.keys.sort %]
+[% # HACK
+   IF d == "2008-05-14"; rooms = [ 'r4' ];
+   ELSE; rooms = [ 'r1', 'r2', 'r3' ];
+   END;
+%]                   
+            [% FOREACH r IN rooms %]
                 <th colspan="[% width.$r.$d %]">[% global.config.rooms.$r %]</th>
             [% END %]
             </tr>
