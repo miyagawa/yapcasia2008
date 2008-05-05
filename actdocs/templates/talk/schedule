@@ -1,6 +1,6 @@
 [% WRAPPER ui title = loc('Schedule') %]
 
-[% PROCESS core/talks/schedule %]
+[% PROCESS core/talk/schedule %]
 
 <div class="sponsors">
 <ul>
