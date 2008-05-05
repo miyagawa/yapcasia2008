@@ -65,6 +65,11 @@
         <tbody> 
         [% FOREACH row IN table.$d %]
             <tr>
+[% # HACK
+   IF d == "2008-05-14"; row = [ row.0, row.5 ];
+   ELSE; rooms = [ row.0, row.1, row.2, row.3 ];
+   END;
+%]    
             [% FOREACH col IN row %]
             [% IF loop.first %]
                 <th>[% col %]</th>
