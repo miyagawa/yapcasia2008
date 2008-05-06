@@ -66,11 +66,12 @@
         [% FOREACH row IN table.$d %]
             <tr>
 [% # HACK
-   IF d == "2008-05-14"; row = [ row.0, row.4 ]; maxwidth.$d = 2;
-   ELSE; row = [ row.0, row.1, row.2, row.3 ]; maxwidth.$d = 4;
+   IF d == "2008-05-14"; row = [ row.0, row.4 ]; maxwidth.$d = 1;
+   ELSE; row = [ row.0, row.1, row.2, row.3 ]; maxwidth.$d = 3;
    END;
 %]    
             [% FOREACH col IN row %]
+            [% NEXT IF !col %]
             [% IF loop.first %]
                 <th>[% col %]</th>
             [% ELSE %]
