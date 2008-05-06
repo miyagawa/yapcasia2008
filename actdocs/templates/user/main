@@ -109,7 +109,7 @@
 <p><b>{{Other Act conferences:}}</b></p>
 <ul>
 [% FOREACH c = conferences %]
-[% NEXT IF c.begin <= "2008-05-15" %]
+[% NEXT IF c.begin.epoch <= 1210809600 %]
 <li><a href="[% c.url %]">[% c.name %]</a>
 [% SWITCH c.participation %]
  [% CASE 'past' %]
