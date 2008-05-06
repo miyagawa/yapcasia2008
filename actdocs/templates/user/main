@@ -13,7 +13,11 @@
   USE formatter = format('%04d%04d');                                                                                        
   SET n = global.request.user.user_id;
   c =  (3 * n * n - 2 * (n % 9) + 7) % 10000;
+  u = global.request.user;
   SET ac = formatter(n, c);
+  UNLESS u.is_orga || u.is_staff || u.has_talk || u.has_paid;
+  ac = ac _ "X";
+  END;
 %]
 <style>
 .checkin-code { font-size: 150%; font-weight: bold }
@@ -27,8 +31,7 @@
  <en>Your check-in code for the conference is <span class="checkin-code">[% ac %]</span>. Print this page and bring to the conference for the quick check-in.</en>
  <ja>あなたのカンファレンスアクセスコードは <span class="checkin-code">[% ac %]</span> です。このページをプリントアウトしてお持ちください。</ja>
  </t></p>
- 
- 
+  
   [% IF global.request.user.has_paid %] <p>
   {{You have purchased your conference ticket:}}
  </p>
