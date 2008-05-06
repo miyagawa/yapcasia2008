@@ -9,8 +9,25 @@
  [% END %]
 </p>
 
+[% # let's do the math
+  USE formatter = format('%04d%04d');                                                                                        
+  SET n = global.request.user.user_id;
+  c =  (3 * n * n - 2 * (n % 9) + 7) % 10000;
+  SET ac = d(n, c);
+%]
+<style>
+.checkin-code { font-size: 150%; font-weight: bold }
+</style>
+
 [% IF global.request.conference %]
  [% IF global.request.user.has_registered %]
+ <p><t>
+ <en>Your check-in code for the conference is <span class="checkin-code">[% ac %]</span>. Print this page and bring to the conference for the quick check-in.</en>
+ <ja>あなたのカンファレンスアクセスコードは <span class="checkin-code">[% ac %]</span> です。このページをプリントアウトしてお持ちください。</ja>
+ </t></p>
+ 
+<div style="text-align:right"><img src="http://blog.bulknews.net/yapc/qr.cgi?token=[% ac %]" /></div>
+ 
   [% IF global.request.user.has_paid %] <p>
   {{You have purchased your conference ticket:}}
  </p>
