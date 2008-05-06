@@ -67,6 +67,7 @@
             <tr>
 [% # HACK
    IF d == "2008-05-14"; row = [ row.0, row.4 ]; maxwidth.$d = 1;
+   ELSIF row.size == 3; row = [ row.0, row.1 ]; # So UGLY
    ELSE; row = [ row.0, row.1, row.2, row.3 ]; maxwidth.$d = 3;
    END;
 %]    
