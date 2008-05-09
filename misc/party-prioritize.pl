@@ -38,12 +38,15 @@ my @sorted = map {
       $_ ];
 } @users;
 
-use YAML;
+my $csv = Text::CSV_XS->new({ binary => 1 });
+
 my @cols = qw( user_id first_name last_name is_staff has_accepted_talk country town not_tokyo payment_means paid_date party );
 
-print join(",", @cols), "\n";
+$csv->combine(@cols);
+print $csv->string, "\n";
 for my $u (sort { $a->{user_id} <=> $b->{user_id} } @sorted) {
-    print join(",", @$u{@cols}), "\n";
+    $csv->combine(@$u{@cols});
+    print $csv->string, "\n";
 }
 
 sub is_tokyo {
