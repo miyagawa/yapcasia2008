@@ -39,10 +39,10 @@ my @sorted = map {
 } @users;
 
 use YAML;
-my @cols = qw( user_id first_name last_name email is_staff has_accepted_talk country town not_tokyo payment_means paid_date party );
+my @cols = qw( user_id first_name last_name is_staff has_accepted_talk country town not_tokyo payment_means paid_date party );
 
 print join(",", @cols), "\n";
-for my $u (@sorted) {
+for my $u (sort { $a->{user_id} <=> $b->{user_id} } @sorted) {
     print join(",", @$u{@cols}), "\n";
 }
 
