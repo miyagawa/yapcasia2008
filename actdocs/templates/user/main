@@ -83,10 +83,12 @@ function showPartyStatus(res) {
   }
 }
 
-var el = document.createElement("script");
-el.type = "text/javascript";
-el.src = "http://blog.bulknews.net/yapc/party.cgi?id=[% global.request.user.user_id %]";
-document.body.appendChild(el);
+function updatePartyStatus() {
+  var el = document.createElement("script");
+  el.type = "text/javascript";
+  el.src = "http://blog.bulknews.net/yapc/party.cgi?id=[% global.request.user.user_id %]";
+  document.body.appendChild(el);
+}
 </script>
 
 <p><b>{{You can:}}</b></p>
@@ -150,3 +152,5 @@ document.body.appendChild(el);
 [% END %]
 
 [% END %]
+<!-- stupid IE -->
+<script>updatePartyStatus()</script>
