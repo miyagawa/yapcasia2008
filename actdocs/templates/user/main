@@ -2,12 +2,15 @@
 
 <p>
  {{This is your personal page.}}
- <t><en>Your user ID is <strong>[% global.request.user.user_id %]</strong></en><ja>あなたのユーザID は <strong>[% global.request.user.user_id %]</strong> です。</ja></t>
  [% IF global.request.conference %]
  [% loc("to <this conference>", global.conference.name) %]
  [% ELSE %]
  {{to Act-enabled conferences.}}
  [% END %]
+</p>
+
+<p>
+ <t><en>Your user ID is <strong>[% global.request.user.user_id %]</strong></en><ja>あなたのユーザID は <strong>[% global.request.user.user_id %]</strong> です。</ja></t>
 </p>
 
 [% # let's do the math
