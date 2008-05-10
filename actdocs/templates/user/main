@@ -10,7 +10,7 @@
 </p>
 
 <p>
- <t><en>Your user ID is <strong>[% global.request.user.user_id %]</strong></en><ja>あなたのユーザID は <strong>[% global.request.user.user_id %]</strong> です。</ja></t>
+ <t><en>Your user ID is <strong style="font-size:1.5em">[% global.request.user.user_id %]</strong></en><ja>あなたのユーザID は <strong style="font-size:1.5em">[% global.request.user.user_id %]</strong> です。</ja></t>
 </p>
 
 [% # let's do the math
