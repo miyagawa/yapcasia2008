@@ -9,10 +9,6 @@
  [% END %]
 </p>
 
-<p>
- <t><en>Your user ID is <strong style="font-size:1.5em">[% global.request.user.user_id %]</strong></en><ja>あなたのユーザID は <strong style="font-size:1.5em">[% global.request.user.user_id %]</strong> です。</ja></t>
-</p>
-
 [% # let's do the math
   USE formatter = format('%04d%04d');                                                                                        
   SET n = global.request.user.user_id;
@@ -61,6 +57,37 @@
         [% loc("You did not register for this conference", make_uri('register')) %]
     [% END %]
 [% END %]
+
+<div id="party-yes" style="visibility:hidden">
+<t>
+<en>You're <strong>selected</strong> to attend to the <a href="http://conferences.yapcasia.org/ya2008/event/320">‎Conference Dinner‎</a>. Congratulations!</en>
+<ja><a href="http://conferences.yapcasia.org/ya2008/event/320">‎カンファレンスディナー‎</a> に参加できます。</ja>
+</t>
+</div>
+
+<div id="party-no" style="visibility:hidden">
+<t>
+<en>We're sorry. You are <strong>not selected</strong> to attend to the <a href="http://conferences.yapcasia.org/ya2008/event/320">‎Conference Dinner‎</a>. You're currently No.<span id="waiting-count"></span> on the waiting list. See <a href="/ya2008/news/145">the news article</a> for details.
+</en>
+<ja>申し訳ありません。<a href="http://conferences.yapcasia.org/ya2008/event/320">‎カンファレンスディナー‎</a>には参加できません。現在順番待ちリストの <span id="waiting-count"></span> 番目となっています。詳細については <a href="/ya2008/news/145">ニュース記事</a> を参照してください。</ja>
+</t>
+</div>
+
+<script>
+function showPartyStatus(res) {
+  if (res == 0) {
+    document.getElementById('party-yes').style.visibility = "visible";
+  } else if(res) {
+    document.getElementById('party-no').style.visibility = "visible";
+    document.getElementById('waiting-count').innerHTML = res;
+  }
+}
+
+var el = document.createElement("script");
+el.type = "text/javascript";
+el.src = "http://blog.bulknews.net/yapc/party.cgi?id=[% global.request.user.user_id %]";
+document.body.appendChild(el);
+</script>
 
 <p><b>{{You can:}}</b></p>
 <ul>
