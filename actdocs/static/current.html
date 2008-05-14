@@ -1,3 +1,11 @@
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<style>
+body,td {
+font-size: 13px
+}
+td { width: 300px }
+</style>
+
   <table width="900">
   [% events = current_events('2008-05-15 14:00:00') %]
   [% FOREACH period = events.keys.sort %]
@@ -5,21 +13,21 @@
   [% FOREACH room = events.$period.keys.sort;
      event = events.$period.$room %]
   [% IF room == 'Venue' %]
-  <td colspan="3">
+  <td colspan="3" style="text-align:center">
   [% date_format(event.datetime, 'time') %]
   <b>[% event.title | html %]</b>
   <i>([% event.duration %] {{min}})</i>
   </td>
   [% ELSE %]
   <td width="300">[% date_format(event.datetime, 'time') %]
-  <b>[% event.title | html %]</b>
-  <i>([% event.duration %] {{min}})</i>
+  <b>[% event.title | html %]</b><br/>
+  [% IF event.user %]
+  [% user_info_base(event.user) %]
+  [% END %]
   [% IF global.config.talks_languages %]
   - [% global.config.talks_languages.${event.lang} %]
   [% END %]
-  [% IF event.user %]
-  <br />[% user_info_base(event.user) %]
-  [% END %]
+  <i>([% event.duration %] {{min}})</i>
   </td>
   [% END %]
   [% END # FOREACH room %]
