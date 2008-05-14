@@ -1,16 +1,6 @@
-  <table>
+  <table width="900">
   [% events = current_events('2008-05-15 14:00:00') %]
   [% FOREACH period = events.keys.sort %]
-  <tr><th colspan="3">[% period %]</th></tr>
-  <tr>
-  [% FOREACH room = events.$period.keys.sort %]
-  [% IF room == 'Venue' %]
-  <th colspan="3">Venue</th>
-  [% ELSE %]
-  <th>[% global.config.rooms.$room %]</th>
-  [% END %]
-  [% END %]
-  </tr>
   <tr>
   [% FOREACH room = events.$period.keys.sort;
      event = events.$period.$room %]
@@ -21,7 +11,7 @@
   <i>([% event.duration %] {{min}})</i>
   </td>
   [% ELSE %]
-  <td>[% date_format(event.datetime, 'time') %]
+  <td width="300">[% date_format(event.datetime, 'time') %]
   <b>[% event.title | html %]</b>
   <i>([% event.duration %] {{min}})</i>
   [% IF global.config.talks_languages %]
