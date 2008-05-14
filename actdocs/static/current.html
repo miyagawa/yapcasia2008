@@ -16,19 +16,19 @@
      event = events.$period.$room %]
   [% IF room == 'Venue' %]
   <td colspan="3">
-  [% date_format(evet.datetime, 'time') %]
+  [% date_format(event.datetime, 'time') %]
   <b>[% event.title | html %]</b>
   <i>([% event.duration %] {{min}})</i>
   </td>
   [% ELSE %]
-  <td>[% date_format(evet.datetime, 'time') %]
+  <td>[% date_format(event.datetime, 'time') %]
   <b>[% event.title | html %]</b>
   <i>([% event.duration %] {{min}})</i>
   [% IF global.config.talks_languages %]
   - [% global.config.talks_languages.${event.lang} %]
   [% END %]
   [% IF event.user %]
-  <br />{{by}} [% user_info_base(event.user) %]
+  <br />[% user_info_base(event.user) %]
   [% END %]
   </td>
   [% END %]
