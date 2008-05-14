@@ -1,24 +1,39 @@
   <table>
-  [% events = current_events(global.request.param('date') || '2008-05-15 15:00:00');
-     FOREACH period = events.keys.sort %]
-     
-     <tr><td colspan="3"><h2>[% period %]</h2></td></tr>
-     
-     [% FOREACH room = events.$period.keys.sort;
-          event = events.$period.$room %]
-          <tr><td>[% global.config.rooms.$room OR loc("room_$room") %]</td>
-              <td>[% date_format(event.datetime, 'time') %]</td>
-              <td><b>[% event.title %]</b>
-                  <i>([% event.duration %] {{min}})</i>
-                  [% IF global.config.talks_languages %]
-                  - [% global.config.talks_languages.${event.lang} %]
-                  [% END %]
-                  [% IF event.user %]
-                    <br />{{by}} [% user_info_base(event.user) %]
-                  [% END %]
-              </td>
-          </tr>
-     [% END %]
-     [% END %]
+  [% events = current_events('2008-05-15 14:00:00') %]
+  [% FOREACH period = events.keys.sort %]
+  <tr><th colspan="3">[% period %]</th></tr>
+  <tr>
+  [% FOREACH room = events.$period.keys.sort %]
+  [% IF room == 'Venue' %]
+  <th colspan="3">Venue</th>
+  [% ELSE %]
+  <th>[% global.config.rooms.$room %]</th>
+  [% END %]
+  [% END %]
+  </tr>
+  <tr>
+  [% FOREACH room = events.$period.keys.sort;
+     event = events.$period.$room %]
+  [% IF room == 'Venue' %]
+  <td colspan="3">
+  [% date_format(evet.datetime, 'time') %]
+  <b>[% event.title | html %]</b>
+  <i>([% event.duration %] {{min}})</i>
+  </td>
+  [% ELSE %]
+  <td>[% date_format(evet.datetime, 'time') %]
+  <b>[% event.title | html %]</b>
+  <i>([% event.duration %] {{min}})</i>
+  [% IF global.config.talks_languages %]
+  - [% global.config.talks_languages.${event.lang} %]
+  [% END %]
+  [% IF event.user %]
+  <br />{{by}} [% user_info_base(event.user) %]
+  [% END %]
+  </td>
+  [% END %]
+  [% END # FOREACH room %]
+  </tr>
+  [% END # FOREACH period %]
   </table>
-  
+ 
