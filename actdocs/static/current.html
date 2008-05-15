@@ -11,7 +11,7 @@ td { width: 300px }
   <th>DeNA Room</th>
   <th>ArcheType Room</th>
   </tr>
-  [% events = current_events('2008-05-15 13:20:01') %]
+  [% events = current_events('2008-05-15 13:30:02') %]
   [% FOREACH period = events.keys.sort %]
   <tr>
   [% FOREACH room = events.$period.keys.sort;
