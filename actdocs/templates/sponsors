@@ -48,3 +48,17 @@
         <li><a href="http://www.mozilla-japan.org/"><img alt="Mozilla Japan" src="/ya2008/css/themes/ya2008/images/sponsors/novelty/logo-mozilla-japan.jpg" width="120" height="49" /></a></li>
     </ul>
 </div>
+
+<div class="sponsors" id="videos">
+    <h3>
+    <t>
+    <ja>動画配信協力</ja>
+    <en>Streaming powered by</en>
+    </t>
+    </h3>
+    <ul>
+        <li><a href="http://www.i-revo.jp/"><img alt="i-revo" src="/ya2008/css/themes/ya2008/images/sponsors/logo-irevo.jpg" width="120" height="38" /></a></li>
+    </ul>
+</div>
+
+
