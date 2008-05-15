@@ -135,14 +135,14 @@
   <td>
     <input type="text" name="url_abstract" value="[% url_abstract %]" size="51" maxlength="256" />
   </td>
-</tr>
+</tr -->
 <tr>
   <td align="right">{{Talk URL}}</td>
   <td>&nbsp;</td>
   <td>
     <input type="text" name="url_talk" value="[% url_talk %]" size="51" maxlength="256" />
   </td>
-</tr -->
+</tr>
 <tr>
   <td align="right" valign="top">{{Duration}}</td>
   <td>&nbsp;</td>
