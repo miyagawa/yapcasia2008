@@ -1,0 +1,8 @@
+[% WRAPPER ui title="Survey" %]
+[% IF global.request.user %]
+<iframe src="http://spreadsheets.google.com/embeddedform?key=p57ECjV3JYfAjBrV4CBFTMQ" width="300" height="172" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+[% ELSE %]
+<t><en>You need to <a href="[% make_uri('main') %]">sign in</a> to see this page.</en>
+<ja>このページを見るには <a href="[% make_uri('main') %]">サインイン</a> してください。</ja></t>
+[% END %]
+[% END %]
