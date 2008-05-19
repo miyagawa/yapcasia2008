@@ -42,6 +42,10 @@
 <hr />
 
 <p>
-[% expand(chunked_abstract) | html_line_break %]
+[% SET abs = expand(chunked_abstract) | html_line_break;
+   abs = abs.replace('nico:(\d+)', '<script type="text/javascript" src="http://www.nicovideo.jp/thumb_watch/$1"></script>');
+   abs;
+  %]
+
 </p>
 [% END %]
