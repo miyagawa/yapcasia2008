@@ -33,6 +33,9 @@
 [% IF url_talk %]
 <li><t><en>Slides</en><ja>スライド</ja></t>: <a href="[% url_talk | html %]">[% url_talk | html %]</a></li>
 [% END %]
+[% IF url_abstract %]
+<li>Google Video: <a href="[% url_abstract | html %]">[% url_abstract | html %]</a></li>
+[% END %]
 [% showtags(tags, 'talks') %]
 </ul>
 
