@@ -129,15 +129,15 @@
     <textarea name="abstract" cols="50" rows="10">[% abstract | form_unescape %]</textarea>
   </td>
 </tr>
-<!-- tr>
-  <td align="right">{{Abstract URL}}</td>
+<tr>
+  <td align="right">Google Video</td>
   <td>&nbsp;</td>
   <td>
     <input type="text" name="url_abstract" value="[% url_abstract %]" size="51" maxlength="256" />
   </td>
-</tr -->
+</tr>
 <tr>
-  <td align="right">{{Talk URL}}</td>
+  <td align="right">Slides URL</td>
   <td>&nbsp;</td>
   <td>
     <input type="text" name="url_talk" value="[% url_talk %]" size="51" maxlength="256" />
