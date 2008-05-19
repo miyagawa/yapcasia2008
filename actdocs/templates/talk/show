@@ -30,23 +30,11 @@
       AND comment %]
   <li>{{Comment:}}[% comment %]</li>
 [% END %]
+[% IF url_talk %]
+<li><t><en>Slides</en><ja>スライド</ja></t>: <a href="[% url_talk | html %]">[% url_talk | html %]</a></li>
+[% END %]
 [% showtags(tags, 'talks') %]
 </ul>
-[% IF url_abstract || url_talk %]
-<p> {{You can find more information on the speaker's site:}}</p>
-<ul>
-  [% IF url_abstract %]
-      <li>{{Abstract:}}
-         <a href="[% url_abstract %]">[% url_abstract %]</a>
-      </li>
-  [% END %]
-  [% IF url_talk %]
-      <li>{{Talk:}}
-         <a href="[% url_talk %]">[% url_talk %]</a>
-      </li>
-  [% END %]
-</ul>
-[% END %]
 
 <hr />
 
